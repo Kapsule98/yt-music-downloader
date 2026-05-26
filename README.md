@@ -4,12 +4,12 @@ A fast and simple C++ command-line application to download audio from YouTube vi
 
 ## Features
 
-- ✓ Download audio from YouTube videos
-- ✓ Convert to MP3 format automatically
-- ✓ Simple CLI interface
-- ✓ Error handling and validation
-- ✓ Supports various YouTube URL formats
-- ✓ Cross-platform (Linux, macOS, Windows with WSL)
+- Download audio from YouTube videos
+- Convert to MP3 format automatically
+- Simple CLI interface
+- Error handling and validation
+- Supports various YouTube URL formats
+- Cross-platform (Linux, macOS, Windows with WSL)
 
 ## Prerequisites
 
@@ -129,107 +129,3 @@ The application will:
 3. Convert the audio to MP3 format
 4. Save the final MP3 file as `<output_filename>.mp3`
 5. Display progress and status messages
-
-### Example Output
-```
-╔════════════════════════════════════════════════════╗
-║     YouTube to MP3 Downloader (C++ Edition)       ║
-╚════════════════════════════════════════════════════╝
-
-Checking dependencies...
-✓ yt-dlp found
-✓ ffmpeg found
-
-========================================
-YouTube to MP3 Downloader
-========================================
-URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-Output: song.mp3
-========================================
-
-Downloading audio from YouTube...
-✓ Audio downloaded successfully
-Converting to MP3 format...
-✓ Conversion complete
-
-✓ Successfully downloaded and converted to MP3!
-File saved as: song.mp3
-```
-
-## Troubleshooting
-
-### "yt-dlp not found" Error
-- Install yt-dlp: `pip install --upgrade yt-dlp`
-- Ensure it's in your PATH: `which yt-dlp`
-
-### "ffmpeg not found" Error
-- Install ffmpeg using your package manager (see Prerequisites section)
-- Verify installation: `which ffmpeg`
-
-### "Failed to download audio" Error
-- Check your internet connection
-- Verify the YouTube URL is valid and publicly accessible
-- Try updating yt-dlp: `pip install --upgrade yt-dlp`
-
-### Permission Denied Error
-- Ensure you have write permissions in the output directory
-- Try creating the output file in your home directory first
-
-### Build Errors
-- Ensure CMake version is 3.10 or higher: `cmake --version`
-- Verify all required packages are installed
-- Try cleaning and rebuilding:
-  ```bash
-  rm -rf build
-  mkdir build
-  cd build
-  cmake ..
-  make
-  ```
-
-## Project Structure
-
-```
-yt-downloader-cpp/
-├── CMakeLists.txt              # Build configuration
-├── README.md                   # This file
-├── include/
-│   └── youtube_downloader.h    # Header file
-├── src/
-│   ├── main.cpp               # CLI interface
-│   └── youtube_downloader.cpp # Core implementation
-└── build/                     # Build directory (created during build)
-```
-
-## Technical Details
-
-- **Language**: C++17
-- **Build System**: CMake
-- **Audio Download**: yt-dlp (creates temporary files)
-- **Audio Conversion**: ffmpeg with MP3 codec
-- **Process Management**: Standard C++ system calls to execute external tools
-
-## Limitations
-
-- Requires internet connection
-- YouTube URL must be publicly accessible
-- Respects YouTube's terms of service (downloaded content should be for personal use only)
-- Quality depends on yt-dlp's available streams and ffmpeg's conversion
-
-## Future Enhancements
-
-- [ ] Batch download multiple videos
-- [ ] Progress bar display
-- [ ] Support for different audio formats
-- [ ] Playlist support
-- [ ] GUI interface
-- [ ] Configuration file support
-- [ ] Download history
-
-## License
-
-This project is provided as-is for educational and personal use.
-
-## Disclaimer
-
-This tool is provided for educational purposes. Users are responsible for ensuring their use complies with YouTube's Terms of Service and applicable copyright laws. The developers are not responsible for any misuse of this tool.
