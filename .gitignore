@@ -1,0 +1,42 @@
+# Build directory
+build/
+cmake_build_debug/
+cmake_build_release/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Executables
+yt-mp3
+yt-mp3.exe
+
+# Object files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+
+# CMake
+CMakeFiles/
+*.cmake
+CMakeCache.txt
+CMakeLists.txt.user
+
+# Temporary files
+*.tmp
+*_temp*
+*.out
+
+# Download artifacts (temporary)
+*.webm
+*.m4a
+*.mp3
+*.wav
+*.flac
